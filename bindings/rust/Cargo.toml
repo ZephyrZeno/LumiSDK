@@ -1,0 +1,14 @@
+[package]
+name = "lumiapp"
+version = "0.1.0"
+edition = "2021"
+description = "Rust FFI bindings for LumiOS Application SDK (liblumiapp)"
+license = "Apache-2.0"
+authors = ["Lumi Team"]
+
+[lib]
+name = "lumiapp"
+path = "src/lib.rs"
+
+[build-dependencies]
+cc = "1"
