@@ -1,0 +1,399 @@
+# LumiScript SDK Library Definitions
+# This file is loaded by LumiIDE to populate the Library Browser.
+# Format: [[lib]] defines a library, [[lib.entries]] defines its members.
+
+[[lib]]
+name = "lumi.app"
+desc = "Application framework"
+
+[[lib.entries]]
+name = "@App"
+kind = "annotation"
+[[lib.entries]]
+name = "@State"
+kind = "annotation"
+[[lib.entries]]
+name = "@Computed"
+kind = "annotation"
+[[lib.entries]]
+name = "@Watch"
+kind = "annotation"
+[[lib.entries]]
+name = "Navigator"
+kind = "class"
+children = ["push(route)", "pop()", "replace(route)", "p:currentRoute"]
+[[lib.entries]]
+name = "Route"
+kind = "class"
+children = ["navigate()", "p:path", "p:params"]
+[[lib.entries]]
+name = "ViewModel"
+kind = "class"
+children = ["onInit()", "onDispose()", "p:state"]
+
+[[lib]]
+name = "lumi.ui"
+desc = "UI components"
+
+[[lib.entries]]
+name = "Column"
+kind = "class"
+children = ["p:spacing", "p:alignment", "padding()"]
+[[lib.entries]]
+name = "Row"
+kind = "class"
+children = ["p:spacing", "p:alignment", "padding()"]
+[[lib.entries]]
+name = "Text"
+kind = "class"
+children = ["fontSize(n)", "fontWeight(w)", "color(c)", "style(s)"]
+[[lib.entries]]
+name = "Button"
+kind = "class"
+children = ["style(...)", "onClick(fn)", "p:enabled"]
+[[lib.entries]]
+name = "TextField"
+kind = "class"
+children = ["p:placeholder", "p:value", "onChanged(fn)"]
+[[lib.entries]]
+name = "Card"
+kind = "class"
+children = ["p:elevation", "padding(n)"]
+[[lib.entries]]
+name = "Image"
+kind = "class"
+children = ["p:src", "size(w,h)", "fit(mode)"]
+[[lib.entries]]
+name = "Icon"
+kind = "class"
+children = ["p:name", "p:size", "p:color"]
+[[lib.entries]]
+name = "Switch"
+kind = "class"
+children = ["p:checked", "onChanged(fn)"]
+[[lib.entries]]
+name = "Slider"
+kind = "class"
+children = ["p:value", "p:min", "p:max"]
+[[lib.entries]]
+name = "ScrollView"
+kind = "class"
+children = ["p:direction", "onScroll(fn)"]
+[[lib.entries]]
+name = "Dialog"
+kind = "class"
+children = ["show()", "dismiss()", "p:title"]
+[[lib.entries]]
+name = "Divider"
+kind = "class"
+children = ["p:thickness", "p:color"]
+[[lib.entries]]
+name = "Spacer"
+kind = "class"
+children = ["p:size"]
+[[lib.entries]]
+name = "Color"
+kind = "enum"
+children = ["p:primary", "p:gray", "p:white", "p:black", "Color(r,g,b)"]
+[[lib.entries]]
+name = "FontWeight"
+kind = "enum"
+children = ["p:bold", "p:normal", "p:light"]
+[[lib.entries]]
+name = "Alignment"
+kind = "enum"
+children = ["p:center", "p:start", "p:end"]
+
+[[lib]]
+name = "lumi.io"
+desc = "File I/O"
+
+[[lib.entries]]
+name = "File"
+kind = "class"
+children = ["read(path)", "write(path,data)", "exists(path)", "delete(path)", "size()"]
+[[lib.entries]]
+name = "Directory"
+kind = "class"
+children = ["list(path)", "create(path)", "exists(path)", "delete(path)"]
+[[lib.entries]]
+name = "Path"
+kind = "class"
+children = ["join(a,b)", "parent()", "fileName()", "extension()"]
+[[lib.entries]]
+name = "FileStream"
+kind = "class"
+children = ["open(path,mode)", "read(n)", "write(data)", "close()"]
+
+[[lib]]
+name = "lumi.net"
+desc = "Networking"
+
+[[lib.entries]]
+name = "Http"
+kind = "class"
+children = ["get(url)", "post(url,body)", "put(url,body)", "delete(url)"]
+[[lib.entries]]
+name = "Request"
+kind = "class"
+children = ["p:url", "p:method", "p:headers", "p:body"]
+[[lib.entries]]
+name = "Response"
+kind = "class"
+children = ["p:status", "p:body", "p:headers", "json()"]
+[[lib.entries]]
+name = "WebSocket"
+kind = "class"
+children = ["connect(url)", "send(msg)", "onMessage(fn)", "close()"]
+[[lib.entries]]
+name = "URL"
+kind = "class"
+children = ["parse(s)", "p:host", "p:path", "p:query"]
+
+[[lib]]
+name = "lumi.data"
+desc = "Data persistence"
+
+[[lib.entries]]
+name = "Database"
+kind = "class"
+children = ["open(name)", "execute(sql)", "query(sql)", "close()"]
+[[lib.entries]]
+name = "SharedPreferences"
+kind = "class"
+children = ["get(key)", "set(key,val)", "remove(key)", "clear()"]
+[[lib.entries]]
+name = "Json"
+kind = "class"
+children = ["encode(obj)", "decode(str)", "parse(str)"]
+
+[[lib]]
+name = "lumi.math"
+desc = "Math utilities"
+
+[[lib.entries]]
+name = "Math"
+kind = "class"
+children = ["sqrt(x)", "abs(x)", "sin(x)", "cos(x)", "pow(x,y)", "clamp(v,lo,hi)", "p:PI", "p:E"]
+[[lib.entries]]
+name = "Random"
+kind = "class"
+children = ["nextInt(max)", "nextFloat()", "nextBool()"]
+
+[[lib]]
+name = "lumi.collections"
+desc = "Collection utilities"
+
+[[lib.entries]]
+name = "List<T>"
+kind = "class"
+children = ["filter(fn)", "map(fn)", "reduce(init,fn)", "sort()", "forEach(fn)", "first()", "last()", "p:size", "add(item)", "remove(idx)"]
+[[lib.entries]]
+name = "Map<K,V>"
+kind = "class"
+children = ["get(key)", "set(key,val)", "remove(key)", "keys()", "values()", "p:size"]
+[[lib.entries]]
+name = "Set<T>"
+kind = "class"
+children = ["add(item)", "remove(item)", "contains(item)", "p:size"]
+
+[[lib]]
+name = "lumi.async"
+desc = "Async runtime"
+
+[[lib.entries]]
+name = "Future<T>"
+kind = "class"
+children = ["await", "then(fn)", "catch(fn)", "map(fn)"]
+[[lib.entries]]
+name = "Dispatcher"
+kind = "class"
+children = ["main(fn)", "io(fn)", "background(fn)"]
+
+[[lib]]
+name = "lumi.concurrent"
+desc = "Concurrency primitives"
+
+[[lib.entries]]
+name = "Channel<T>"
+kind = "class"
+children = ["send(val)", "receive()", "p:capacity"]
+[[lib.entries]]
+name = "Mutex<T>"
+kind = "class"
+children = ["lock(fn)", "tryLock(fn)"]
+[[lib.entries]]
+name = "Timer"
+kind = "class"
+children = ["schedule(delay,fn)", "repeat(interval,fn)", "cancel()"]
+[[lib.entries]]
+name = "Semaphore"
+kind = "class"
+children = ["acquire()", "release()", "p:permits"]
+
+[[lib]]
+name = "lumi.crypto"
+desc = "Cryptography"
+
+[[lib.entries]]
+name = "Crypto"
+kind = "class"
+children = ["sha256(data)", "md5(data)", "aesEncrypt(data,key)", "aesDecrypt(data,key)", "uuid()", "randomBytes(n)"]
+
+[[lib]]
+name = "lumi.media"
+desc = "Multimedia"
+
+[[lib.entries]]
+name = "AudioPlayer"
+kind = "class"
+children = ["play()", "pause()", "stop()", "p:volume", "p:duration", "p:position"]
+[[lib.entries]]
+name = "Camera"
+kind = "class"
+children = ["open(facing)", "capture()", "startPreview()", "stopPreview()"]
+[[lib.entries]]
+name = "VideoPlayer"
+kind = "class"
+children = ["play()", "pause()", "seek(pos)", "p:duration"]
+
+[[lib]]
+name = "lumi.animation"
+desc = "Animation system"
+
+[[lib.entries]]
+name = "Animate"
+kind = "class"
+children = ["animate(dur,curve,fn)", "spring(stiff,damp,fn)", "transition(type,dur,fn)"]
+[[lib.entries]]
+name = "Curve"
+kind = "enum"
+children = ["p:linear", "p:easeIn", "p:easeOut", "p:easeInOut"]
+
+[[lib]]
+name = "lumi.platform"
+desc = "Platform APIs"
+
+[[lib.entries]]
+name = "Platform"
+kind = "class"
+children = ["p:deviceInfo", "p:clipboard", "notify(title,body)", "openUrl(url)", "requestPermission(perm)"]
+[[lib.entries]]
+name = "DeviceInfo"
+kind = "class"
+children = ["p:os", "p:model", "p:version", "p:screenSize"]
+
+[[lib]]
+name = "lumi.test"
+desc = "Testing framework"
+
+[[lib.entries]]
+name = "@Test"
+kind = "annotation"
+[[lib.entries]]
+name = "@BeforeEach"
+kind = "annotation"
+[[lib.entries]]
+name = "@AfterEach"
+kind = "annotation"
+[[lib.entries]]
+name = "@BeforeAll"
+kind = "annotation"
+[[lib.entries]]
+name = "Assert"
+kind = "class"
+children = ["assert(cond)", "assertEqual(a,b)", "assertNotNull(v)", "assertThrows(fn)"]
+
+[[lib]]
+name = "lumi.log"
+desc = "Logging"
+
+[[lib.entries]]
+name = "Log"
+kind = "class"
+children = ["debug(msg)", "info(msg)", "warn(msg)", "error(msg,err)"]
+
+[[lib]]
+name = "lumi.graphics"
+desc = "2D/3D graphics"
+
+[[lib.entries]]
+name = "Canvas"
+kind = "class"
+children = ["drawRect(x,y,w,h)", "drawCircle(cx,cy,r)", "drawLine(x1,y1,x2,y2)", "drawText(text,x,y)", "p:width", "p:height", "clear(color)"]
+[[lib.entries]]
+name = "Paint"
+kind = "class"
+children = ["p:color", "p:strokeWidth", "p:style", "p:alpha"]
+[[lib.entries]]
+name = "Bitmap"
+kind = "class"
+children = ["create(w,h)", "load(path)", "save(path)", "getPixel(x,y)", "setPixel(x,y,c)"]
+
+[[lib]]
+name = "lumi.location"
+desc = "GPS and location"
+
+[[lib.entries]]
+name = "Location"
+kind = "class"
+children = ["requestCurrent()", "startTracking()", "stopTracking()", "p:latitude", "p:longitude", "p:altitude"]
+[[lib.entries]]
+name = "Geocoder"
+kind = "class"
+children = ["addressFromCoords(lat,lon)", "coordsFromAddress(addr)"]
+
+[[lib]]
+name = "lumi.notification"
+desc = "Push notifications"
+
+[[lib.entries]]
+name = "Notification"
+kind = "class"
+children = ["show(title,body)", "schedule(title,body,time)", "cancel(id)", "p:channels"]
+[[lib.entries]]
+name = "NotificationChannel"
+kind = "class"
+children = ["p:id", "p:name", "p:importance"]
+
+[[lib]]
+name = "lumi.storage"
+desc = "Cloud storage"
+
+[[lib.entries]]
+name = "CloudStorage"
+kind = "class"
+children = ["upload(file,path)", "download(path)", "delete(path)", "list(prefix)"]
+[[lib.entries]]
+name = "Cache"
+kind = "class"
+children = ["get(key)", "set(key,val,ttl)", "remove(key)", "clear()"]
+
+[[lib]]
+name = "lumi.thread"
+desc = "Multi-threading and thread pool"
+
+[[lib.entries]]
+name = "Thread"
+kind = "class"
+children = ["spawn(fn)", "join()", "sleep(ms)", "p:id", "p:name", "p:isAlive", "current()"]
+[[lib.entries]]
+name = "ThreadPool"
+kind = "class"
+children = ["create(size)", "submit(fn)", "shutdown()", "awaitTermination(timeout)", "p:activeCount", "p:poolSize"]
+[[lib.entries]]
+name = "Atomic<T>"
+kind = "class"
+children = ["get()", "set(val)", "compareAndSet(expect,update)", "getAndIncrement()", "getAndDecrement()"]
+[[lib.entries]]
+name = "ReadWriteLock"
+kind = "class"
+children = ["readLock(fn)", "writeLock(fn)", "tryReadLock(fn)", "tryWriteLock(fn)"]
+[[lib.entries]]
+name = "CountDownLatch"
+kind = "class"
+children = ["countDown()", "await()", "awaitTimeout(ms)", "p:count"]
+[[lib.entries]]
+name = "BlockingQueue<T>"
+kind = "class"
+children = ["put(item)", "take()", "poll(timeout)", "p:size", "p:capacity"]
